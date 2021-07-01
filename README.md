@@ -1,6 +1,8 @@
 
 # React Interactive Calendar synced with React Frappe Charts Graph
 
+A calendar with React Frappe Charts created for the convenience of mapping calendar inputs to a simple chart. Most lightweight NPM chart available and the graph is a separate component that is not required to be used.
+
 ## Installation
 
     npm install --save mapped-calendar-graph
