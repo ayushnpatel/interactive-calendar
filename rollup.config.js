@@ -1,15 +1,14 @@
 import { babel } from '@rollup/plugin-babel';
-import { terser } from 'rollup-plugin-terser';
+import resolve   from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
 
-
-const resolve = require('@rollup/plugin-node-resolve');
 const postcss = require('rollup-plugin-postcss');
 const external = require('rollup-plugin-peer-deps-external');
 
 
 
 const config = {
-    input: './src/index.js',
+    input: 'src/index.js',
     output: [
         {
             file: 'dist/index.js',
@@ -26,13 +25,13 @@ const config = {
             exclude: 'node_modules/**',
             presets: ['@babel/preset-react']
         }),
-        resolve,
+        resolve(),
         postcss({
             plugins:[],
             minimize:true
         }),
         external(),
-        terser()
+        commonjs()
     ]
 };
 
